@@ -37,8 +37,9 @@ export default function App() {
           <TextInput
             placeholder = 'E-Mail'
             style = {styles.textInput}
-            value = {mail}
-            onChangeText = {setMail}
+            value = {mail} // girdiğimiz mail değeri burada tutuluyor
+            onChangeText = {setMail} // maili yazmamızı sağlıyor
+            min_length = {2}
           />
         </View>
 
@@ -114,7 +115,8 @@ const styles = StyleSheet.create({
 
   button_container: {
     width: width/100 * 60,
-    alignItems: 'center',
+    marginTop: 10,
+    marginRight: 45,
     flexDirection: 'row', // tek bir satıra hizalamak için
   },
 
@@ -126,6 +128,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#fff',
     borderRadius: 6,
+    marginHorizontal: 10,
   },
 
   buttonText: {
