@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Dimensions } from 'react-native'; 
+import { StyleSheet, Text, View, TextInput, Dimensions, ImageBackground, TouchableOpacity } from 'react-native'; 
 import React , {useState} from 'react' // kullanıcı bilgisi kaydetmek için
 import Icon from 'react-native-vector-icons/Ionicons' // icon kullanmak için
 
@@ -9,39 +9,40 @@ const height = Dimensions.get('window').height; // ekran yüksekliğini almak i�
 
 export default function App() {
 
-  const [PASS, setPASS ] = useState('1234') // şifreyi belirledik
+  const [PASS, setPASS ] = useState('1234') // şifreyi belirledik 
   const [MAIL, setMAIL ] = useState('mustafa@gmail.com') // maili belirledik
 
   return (
 
     <View style={styles.container}>
 
-      <View style={styles.textInputContainer}>
+      <ImageBackground source={require('./img/bgsmall.jpg')} resizeMode='cover' style={styles.bg_image}>
+        <View style={styles.textInputContainer}> 
 
-        <View style={styles.IconContainer}>
-          <Icon name = 'person' size={30} color={'#fff'}/>
-        </View>
-        
-        <TextInput
-          placeholder = 'E-Mail'
-          style = {styles.textInput}
-        />
-      </View>
-
-      <View style={styles.textInputContainer}>
-
-        <View style={styles.IconContainer}>
-          <Icon name = 'key' size={30} color={'#fff'}/>
+          <View style={styles.IconContainer}>
+            <Icon name = 'person' size={30} color={'#fff'}/>
+          </View>
+          
+          <TextInput
+            placeholder = 'E-Mail'
+            style = {styles.textInput}
+          />
         </View>
 
-        <TextInput
-          placeholder = 'Password'
-          style = {styles.textInput}
-        />
-      </View>
+        <View style={styles.textInputContainer}>
 
-      <StatusBar style="auto" />
+          <View style={styles.IconContainer}>
+            <Icon name = 'key' size={30} color={'#fff'}/>
+          </View>
 
+          <TextInput
+            placeholder = 'Password'
+            style = {styles.textInput}
+          />
+        </View>
+
+        <StatusBar style="auto" />
+      </ImageBackground>
     </View>
 
   );
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // container alanının ne kadar yer kaplayacağını belirler flex değeri 1 olduğu için tüm containerlar ile eşit olarak alanı bölüşür
     alignItems: 'center', // yatay hizalama
-    justifyContent: 'center' // dikey hizalama
+    justifyContent: 'center', // dikey hizalama
   },
 
   textInput: {
@@ -71,9 +72,15 @@ const styles = StyleSheet.create({
   IconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#1db81d',
+    backgroundColor: '#bdbfbf',
     width: 60,
     height: 60,
   },
 
+  bg_image: {
+    flex: 1,
+    width: width,
+    alignItems: 'center', // yatay hizalama
+    justifyContent: 'center', // dikey hizalama
+  }
 });
