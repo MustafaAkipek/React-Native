@@ -41,6 +41,14 @@ export default function App() {
           />
         </View>
 
+        <View style={styles.button_container}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>
+              Login
+            </Text> 
+          </TouchableOpacity>
+        </View>
+
         <StatusBar style="auto" />
       </ImageBackground>
     </View>
@@ -82,5 +90,25 @@ const styles = StyleSheet.create({
     width: width,
     alignItems: 'center', // yatay hizalama
     justifyContent: 'center', // dikey hizalama
+  },
+
+  button_container: {
+    width: width/100 * 60,
+    alignItems: 'center',
+  },
+
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#bdbfbf',
+    width: width / 100 * 30,
+    paddingVertical: 8,
+
+  },
+
+  buttonText: {
+    color: '#000',
+    fontSize: 18,
+
   }
+
 });
