@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Dimensions } from 'react-native'; 
 import React , {useState} from 'react' // kullanıcı bilgisi kaydetmek için
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons' // icon kullanmak için
 
 
 const width = Dimensions.get('window').width; // ekran genişliğini almak için
@@ -23,7 +23,7 @@ export default function App() {
         </View>
         
         <TextInput
-          placeholder = 'Mail'
+          placeholder = 'E-Mail'
           style = {styles.textInput}
         />
       </View>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   IconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#990000',
+    backgroundColor: '#1db81d',
     width: 60,
     height: 60,
   },
