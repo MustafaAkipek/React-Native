@@ -9,8 +9,19 @@ const height = Dimensions.get('window').height; // ekran yüksekliğini almak i�
 
 export default function App() {
 
-  const [PASS, setPASS ] = useState('1234') // şifreyi belirledik 
-  const [MAIL, setMAIL ] = useState('mustafa@gmail.com') // maili belirledik
+  const [PASS, setPASS ] = useState('3169') // şifreyi belirledik 
+  const [MAIL, setMAIL ] = useState('akipekmustafa23@gmail.com') // maili belirledik
+  const [mail, setMail] = useState('') // kullanıcının girdiği değer burada tutulur
+  const [password, setPassword] = useState('') // kullanıcının girdiği değer burada tutulur
+
+  function Login() {
+    if (PASS == password && MAIL == mail) {
+      alert('Giris Basarili')
+    }
+    else  {
+      alert('Sifre veya Mail adresi Hatali')
+    }
+  }
 
   return (
 
@@ -26,6 +37,8 @@ export default function App() {
           <TextInput
             placeholder = 'E-Mail'
             style = {styles.textInput}
+            value = {mail}
+            onChangeText = {setMail}
           />
         </View>
 
@@ -38,13 +51,20 @@ export default function App() {
           <TextInput
             placeholder = 'Password'
             style = {styles.textInput}
+            value = {password}
+            onChangeText = {setPassword}
           />
         </View>
 
         <View style={styles.button_container}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress = {Login}>
             <Text style={styles.buttonText}>
               Login
+            </Text> 
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress = {Login}>
+            <Text style={styles.buttonText}>
+              Register
             </Text> 
           </TouchableOpacity>
         </View>
@@ -95,13 +115,14 @@ const styles = StyleSheet.create({
   button_container: {
     width: width/100 * 60,
     alignItems: 'center',
+    flexDirection: 'row', // tek bir satıra hizalamak için
   },
 
   button: {
     alignItems: 'center',
     backgroundColor: '#bdbfbf',
     width: width / 100 * 30,
-    paddingVertical: 8,
+    paddingVertical: 6,
     borderWidth: 1,
     borderColor: '#fff',
     borderRadius: 6,
