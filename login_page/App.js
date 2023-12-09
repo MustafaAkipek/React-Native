@@ -9,7 +9,7 @@ const height = Dimensions.get('window').height; // ekran yüksekliğini almak i�
 
 export default function App() {
 
-  const [PASS, setPASS ] = useState('3169') // şifreyi belirledik 
+  const [PASS, setPASS ] = useState('10112003') // şifreyi belirledik 
   const [MAIL, setMAIL ] = useState('akipekmustafa23@gmail.com') // maili belirledik
   const [mail, setMail] = useState('') // kullanıcının girdiği değer burada tutulur
   const [password, setPassword] = useState('') // kullanıcının girdiği değer burada tutulur
