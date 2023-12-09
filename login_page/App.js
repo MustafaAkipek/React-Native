@@ -53,6 +53,7 @@ export default function App() {
             style = {styles.textInput}
             value = {password}
             onChangeText = {setPassword}
+            secureTextEntry = {true}
           />
         </View>
 
