@@ -39,7 +39,6 @@ export default function App() {
             style = {styles.textInput}
             value = {mail} // girdiğimiz mail değeri burada tutuluyor
             onChangeText = {setMail} // maili yazmamızı sağlıyor
-            min_length = {2}
           />
         </View>
 
@@ -134,7 +133,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#000',
     fontSize: 18,
-
   }
 
 });
