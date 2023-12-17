@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Dimensions, ImageBackground} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Dimensions, ImageBackground, TouchableOpacity} from 'react-native';
 import React , {useState} from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -53,6 +53,13 @@ export default function App() {
           />
         </View>
 
+        <View style={styles.button_container}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>
+              Register
+            </Text>
+          </TouchableOpacity>
+        </View>
 
         <StatusBar style="auto" />
       </ImageBackground>
@@ -95,4 +102,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  button_container: {
+    width: width / 100 * 60,
+    marginTop: 10,
+    marginLeft: 100,
+  },
+
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#bdbfbf',
+    width: width / 100 * 30,
+    paddingVertical: 6,
+    borderWidth: 1,
+    borderColor: '#fff',
+    borderRadius: 6,
+    marginHorizontal: 10,
+  },
+
+  buttonText: {
+    color: '#000',
+    fontSize: 18,
+  }
 });
