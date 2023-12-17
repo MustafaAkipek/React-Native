@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Dimensions} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Dimensions, ImageBackground} from 'react-native';
 import React , {useState} from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -11,48 +11,51 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <View style={styles.textInputContainer}>
-        <View style={styles.IconContainer}>
-          <Icon name='mail' size={30} color={'#fff'}/>
-        </View>  
-        <TextInput
-          placeholder='Enter your Email'
-          style={styles.textInput}
-        />
-      </View>
+      <ImageBackground source={require('./img/bgsmall.jpg')} resizeMode='cover' style={styles.bg_image}>
 
-      <View style={styles.textInputContainer}>
-        <View style={styles.IconContainer}>
-          <Icon name='person' size={30} color={'#fff'}/>
+        <View style={styles.textInputContainer}>
+          <View style={styles.IconContainer}>
+            <Icon name='mail' size={30} color={'#fff'}/>
+          </View>  
+          <TextInput
+            placeholder='Enter your Email'
+            style={styles.textInput}
+          />
         </View>
-        <TextInput
-          placeholder='Enter your full name'
-          style={styles.textInput}
-        />
-      </View>
 
-      <View style={styles.textInputContainer}>
-        <View style={styles.IconContainer}>
-          <Icon name='phone-portrait' size={30} color={'#fff'}/>
+        <View style={styles.textInputContainer}>
+          <View style={styles.IconContainer}>
+            <Icon name='person' size={30} color={'#fff'}/>
+          </View>
+          <TextInput
+            placeholder='Enter your full name'
+            style={styles.textInput}
+          />
         </View>
-        <TextInput
-          placeholder='Enter your phone no'
-          style={styles.textInput}
-        />
-      </View>
 
-      <View style={styles.textInputContainer}>
-        <View style={styles.IconContainer}>
-          <Icon name='key' size={30} color={'#fff'}/>
+        <View style={styles.textInputContainer}>
+          <View style={styles.IconContainer}>
+            <Icon name='phone-portrait' size={30} color={'#fff'}/>
+          </View>
+          <TextInput
+            placeholder='Enter your phone no'
+            style={styles.textInput}
+          />
         </View>
-        <TextInput
-          placeholder='Enter your password'
-          style={styles.textInput}
-        />
-      </View>
+
+        <View style={styles.textInputContainer}>
+          <View style={styles.IconContainer}>
+            <Icon name='key' size={30} color={'#fff'}/>
+          </View>
+          <TextInput
+            placeholder='Enter your password'
+            style={styles.textInput}
+          />
+        </View>
 
 
-      <StatusBar style="auto" />
+        <StatusBar style="auto" />
+      </ImageBackground>
     </View>
   );
 }
@@ -84,5 +87,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#bdbfbf',
     width: 60,
     height: 60,
-  }
+  },
+
+  bg_image: {
+    flex: 1,
+    width: width,
+    alignItems: 'center', // yatay hizalama
+    justifyContent: 'center', // dikey hizalama
+  },
 });
