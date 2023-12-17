@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   bg_image: {
     flex: 1,
     width: width,
-    alignItems: 'center', // yatay hizalama
-    justifyContent: 'center', // dikey hizalama
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
